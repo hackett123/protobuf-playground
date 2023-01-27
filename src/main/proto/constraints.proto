@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.amazonaws.athena.lambda.connector.predicate;
+
+option java_multiple_files = true;
+option java_package = "com.amazonaws.athena.lambda.connector.predicate";
+
+message Constraints {
+  repeated OrderByField orderByList = 1;
+  int64 limit = 2;
+}
+
+message OrderByField {
+  string columnName = 1;
+  bool isDescending = 2;
+}
